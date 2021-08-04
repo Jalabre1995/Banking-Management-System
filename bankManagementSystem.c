@@ -9,6 +9,32 @@ int exit;
 //Prototype functions//
 //Menu will display the options//
 void menu();
+//Create a class that holds the date//
+struct date {
+    int month, day, year;
+};
+struct {
+    char name[60];
+    int acc_no,age;
+    char address[60];
+    char citizenship[15];
+    double phone;
+    char acc_type[10];
+    float amt;
+    struct date dob;
+    struct date desposit;
+    struct date withdraw;
+
+    
+}add, upd, check, rem, transaction;
+
+float interest(float t, float amount, int rate)
+{
+    float SI;
+    SI = (rate*t*amount) /100.0;
+    return (SI);
+
+}
 //Delay the request when a option is selected//
 void fordelay();
 ///When someone want to make a new account//
@@ -18,7 +44,7 @@ void new_list();
 //Edit anyt changes to the system//
 void edit();
 ///Have a transaction history for the user//
-void transaction(void);
+void transact(void);
 //delete option if a client has been removed fromt he system//
 void delete(void);
 //View option to see how many users we chave//
