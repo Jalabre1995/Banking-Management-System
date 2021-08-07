@@ -22,7 +22,7 @@ struct {
     char acc_type[10];
     float amt;
     struct date dob;
-    struct date desposit;
+    struct date deposit;
     struct date withdraw;
 
     
@@ -101,4 +101,42 @@ int main(void)
         }
         return 0;
     }
+}
+///Delay when the user enters a option///
+void fordelay(int j)
+{
+    int i,k;
+    for(i=0; i <j; i++)
+        k=i;
+}
+
+void new_acc()
+{
+    int choice;
+    FILE *ptr;
+
+    ptr=fopen("record.dat", "a+");
+    account_no:
+    system("cls");
+    printf("\t\t\t\xB2\xB2\xB2\ ADD RECORD \xB2\xB2\xB2\xB2");
+    printf("\n\n\nEnter today's date(mm/dd/yyyy):");
+    scanf("%d/%d/%d",&add.deposit.month,&add.deposit.day,&add.deposit.year);
+    printf("\nEnter the account number:");
+    scanf("%d", &check.acc_no);
+    while(fscanf(ptr,"%d %s %d/%d/%d %d %s %s %lf %s %f %d/%d/%d\n",&add.acc_no,add.name, &add.dob.month, &add.dob.day,&add.dob.year,&add.age,add.address, add.citizenship, &add.phone,add.acc_type, &add.amt,&add.deposit.month,&add.deposit.day, &add.deposit.year)!=EOF)
+    {
+        if (check.acc_no==add.acc_no)
+        {
+            printf("Account no. Already in use!");
+            foredelay(100000000);
+            goto account_no;
+        }
+    }
+    add.acc_no==check.acc_no;
+    printf("\nEnter the name: ");
+    scanf("%s", add.name);
+    printf("\nEnter the date of birth(mm/dd/yyyy): ");
+    scanf("%d/%d/%d", add.dob.month,&add.dob.day, &add.dob.year);
+    printf("\nEnter the age: ");
+    scanf("%d", &add.age);
 }
